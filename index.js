@@ -96,8 +96,8 @@ app.post('/enviar-asistencia', async (req, res) => {
 
 
 ///////////api celular
-const accountSid = ACCOUNT-SID;
-const authToken = AUTH-TOKEN;
+const accountSid = ACCOUNT;
+const authToken = AUTH;
 const client = twilio(accountSid, authToken);
 
 // Ruta para enviar SMS
