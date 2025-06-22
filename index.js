@@ -10,6 +10,12 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
+const CORREO=process.env.CORREO;
+const PASSW=process.env.PASSW;
+const ACCOUNT=process.env.ACCOUNT;
+const AUTH=process.env.AUTH;
+const NUMERO=process.env.NUMERO;
+
 app.post('/enviar-correo', async (req, res) => {
   const { correo, nombre, entrenamiento, fecha, turno } = req.body;
 
@@ -26,7 +32,7 @@ app.post('/enviar-correo', async (req, res) => {
   });
 
   const mailOptions = {
-    from: 'carlosvm12345678@gmail.com',
+    from: CORREO,
     to: correo,
     subject: 'Confirmación de entrenamiento',
     text: `Hola ${nombre},
